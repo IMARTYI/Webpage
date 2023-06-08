@@ -1,0 +1,10 @@
+
+# Ignore all TXT,database files, and jpgs.
+
+*.txt
+
+*.db
+
+*.jpg
+
+*.pdf

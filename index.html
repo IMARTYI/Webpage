@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<!--
+    @author             David Martin 
+    @Course             COSC 2P89
+    @Student ID         6995948
+    @Brock Username     dm20zo
+    @Since              December 5th, 2022   
+    This Document will be the landing page of my website.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> David's Wepage</title>
+    </head>
+    <style>
+
+        /**
+            CSS for the body
+        */
+        body{
+
+           color: black;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           align-items: center;
+        }
+        /**
+            Css styling for the header
+        */
+        header{
+
+            top: 0;
+            position: fixed;
+            font-size: 40px;
+            left: 0;
+            background-color:rgba(116, 240, 116, 0.6);
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+
+        }
+        /*
+            Nav bar buttons in the header
+        */
+        .navbar button{
+           font-size: 20px;
+           background-color:rgba(116, 240, 116, 0);
+           cursor: pointer;
+           border: none;
+        }
+        /*
+            Css for the photo of me
+        */
+        #Me{
+            width: 200px;
+            height: 300px;
+            padding-left: 0;
+            z-index: 3;
+            box-shadow: inset;
+        }
+        /*
+            CSS for photo in about me
+        */
+        #pic{
+            width: 200px;
+            height: 150px;
+            padding-left: 65%;
+            top: 62%;
+            position: absolute;
+        }
+        /*
+            Hover for any of the buttons on the navbar
+        */
+        .navbar :hover{
+
+            font-style: bold;
+            font-size: 30px;
+
+        }
+        /*
+            Styling for the landing page display 
+        */
+        #HomePage{
+
+            padding: 4px;
+            position: fixed;
+            top:35%;
+            font-size: 30px;
+            z-index: 4;
+        }
+        /*
+            Styling for the about me page
+        */
+        #aboutMe{
+
+            left: 0;
+            background-color:rgba(116, 240, 116, 0.6) ;
+            position: fixed;
+            top:25%;
+            font-size: 30px;
+            visibility: hidden;   
+            width: 100%;
+            height: 700px;
+            font-size: 20px;
+        }
+        /*
+            Content within the about me div
+        */
+        #content{
+            
+            font-size: 20px;
+            top: 12%;
+            width: 66%;
+            left: 15%;
+            position: absolute;
+        }
+        /*
+            Css for Courses div
+        */
+        #courses{
+            padding: 8px;
+            align-items: center;
+            left: 32%;
+            top: 25%;
+            visibility: hidden;
+            position: fixed;
+            background-color:rgba(116, 240, 116, 0.6);
+        }
+        /*
+            Stylling for the content within the list
+        */
+        #courses li{
+
+           padding: 12px;
+           align-items: center;
+
+        }
+        /*
+            Hovering over the contents within the list
+        */
+        #courses li :hover{
+
+            font-size: 30px;
+        }
+        /*
+            Styling for the hyper-text links within the list
+        */
+        #courses a {
+
+            color: black;
+            text-decoration: none;
+            font-size: 25px;
+            align-items: center;
+        }
+        /*
+            Styling for login form
+        */
+        #Sign-up{
+            font-size: 25px;
+            background-color:rgba(116, 240, 116, 0.6);
+            visibility: hidden;
+            position: absolute;
+            left: 41%;
+            padding: 30px;
+            top: 28%;
+            height: 300x;
+        }
+        /*
+            Css for the input fields within the form
+        */
+        #Sign-Up input{
+
+            text-align: left;
+            padding: 12px;
+            width: 100%;
+
+        }
+        /*
+            Sign up button on hover
+        */
+        #Sign-up button :hover{
+            font-size: 35px;
+        }
+        /*
+            CSS for the resume page
+        */
+        #CvPage{
+
+            visibility: hidden; 
+            width: 100%;
+        }
+        /*
+            CSS for the title of the CV Page
+        */
+        #CvPage h1{
+            position: fixed;
+            left: 46%;
+            top: 18%;
+        }
+        /*
+            The Css for the Resume itself 
+        */
+        #Resume{
+            background-color:rgba(116, 240, 116, 0.6);
+            padding: 40px;
+            position: fixed;
+            left: 26%;
+            top: 28%;
+            width: 600px;
+            height: 400px
+        }
+        /*
+            CSS for logged in status
+        */
+        #LoggedIn{
+          
+            color: red;
+            z-index: 6;
+            font-size: 20px;
+            top: 12%;
+            position: fixed;
+
+        }
+        /*
+            Css for Creating an account form
+        */
+        #Create{
+
+            font-size: 25px;
+            background-color:rgba(116, 240, 116, 0.6);
+            position: absolute;
+            left: 41%;
+            padding: 30px;
+            top: 28%;
+            height: 300x;
+            visibility: hidden;
+        }
+        /*
+            CSS for the past projects page
+        */
+        #projects{
+            padding: 8px;
+            font-size: 30px;
+            visibility: hidden;
+            padding: 8px;
+            align-items: center;
+            left: 32%;
+            top: 25%;
+            position: fixed;
+            background-color:rgba(116, 240, 116, 0.6);
+            width: 50%;
+        }
+        /*
+            CSS for the hyperlink taking the user to my projects
+        */
+        #projects a{
+            color: black;
+            text-decoration: none;
+            font-size: 25px;
+            align-items: center;
+        }
+        /*
+            Hover on the projects
+        */
+        #projects li :hover{
+            font-size: 30px;
+        }
+        /*
+            Styling for the bottom of the page
+        */
+        #bottom{
+
+            width: 100%;
+        }
+        /*
+            Styling for the footer page
+        */
+        footer{
+
+            text-align: center;
+            padding: 12px;
+            background-color:rgba(116, 240, 116, 0.6);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+        /*
+            Styling for the delete account button
+        */
+        footer button{
+
+            cursor: pointer;
+            color: black;
+            background-color: rgba(116,240,116,0);
+            border: none;
+            font-size: 15px;
+        }
+        /*
+            Hover on the footer CSS
+        */
+        footer :hover{
+
+            font-size: 20px;
+        }
+        /*
+            CSS for the Delete Account form
+        */
+        #delete{
+            font-size: 25px;
+            background-color:rgba(116, 240, 116, 0.6);
+            position: absolute;
+            left: 41%;
+            padding: 30px;
+            top: 28%;
+            height: 300x;
+            visibility: hidden;
+        }
+        /*
+            Sign out button is hidden until user is logged in
+        */
+        #Sign-out_button{
+
+            visibility: hidden;
+        }
+        /*
+            CSs for the sign out button
+        */
+        #Sign-out_button button{
+
+            
+            position: absolute;
+            cursor: pointer;
+            right: 1%;
+            border: none;
+            font-size: 20px;
+            padding: 4px;  
+            top: 12%;
+            background-color:rgba(116,240,116,0) ;
+        }
+
+        /*
+            Responsive design with a smaller user screen
+        */
+        @media only screen and (max-width: 800px){
+
+            #delete{
+                font-size: 12px;
+                padding: 4px;
+                left: 12%;
+            }
+            #projects a {
+
+                font-size: 12px;
+            }
+            #projects{
+                top: 40%;
+                font-size: 12px;
+                padding: 2px;
+                left: 10%;
+                position: fixed;
+                width: 80%;
+            }
+            #Create{
+                font-size: 12px;
+                padding: 4px;
+                left: 12%;
+            }
+            #Sign-up{
+                font-size: 12px;
+                padding: 4px;
+                left: 12%;
+            }
+            #CvPage h1{
+                font-size: 15px;    
+            }
+            #Resume{
+
+                left: 26%;
+                width: 400px;
+                height: 300px;
+                padding: 5px;
+                
+            }
+            #content{
+                font-size: 10px;
+            }
+            #aboutMe{
+                font-size: 10px;
+            }
+            #Me{
+                display: none;
+            }
+            #pic{
+                display: none;
+            }
+            #LoggedIn{
+                font-size: 10px;
+                top: 22%;
+            }
+            header{
+                padding: 4px;
+            }
+            .navbar :hover{
+                font-size: 10px;
+            }
+            footer button{
+                font-size: 10px;
+            }
+            footer{
+                position: fixed;
+            }
+            .navbar button{
+                font-size: 12px;
+
+            }
+            #HomePage{
+                font-size: 12px;
+            }
+
+            #courses li :hover{
+                font-size: 12px;
+            }
+            #courses{
+                top: 40%;
+                font-size: 12px;
+                padding: 2px;
+                left: 10%;
+                position: fixed;
+                width: 80%;
+            }
+            #courses a{
+                font-size: 12px;
+
+            }
+            #Sign-out_button button{
+                font-size: 10px;
+                top: 6%;
+
+            }
+        }
+    </style>
+
+    <body style="background-image:url(background.jpg); background-size: cover; background-attachment: fixed;" onload="KeepData()">
+
+        <!--
+            Header/ Topnav of the page
+        -->
+        <header>
+
+            Welcome
+
+            <div class="navbar">
+            <button onclick="showHome()"> <!--Button for Home Page-->
+                    Home
+            </button>
+            <button onclick="showCourses()"> <!-- Button to see Courses-->
+                    Courses
+            </button>
+            <button onclick="showAboutMe()"> <!-- Button to show About Me Page-->
+                About Me
+            </button>
+
+            <button onclick="showCvpage()"> <!-- Button to show my CV PAGE (It's not me)-->
+                CV Page
+            </button>
+
+            <button onclick="check()"> <!-- Button to show my past Projects-->
+                Past Projects
+            </button>
+
+        
+            <button onclick="showSignUp()" id="login_button"> <!-- Button for the user to make an account-->
+                Sign Up/Login
+            </button>
+
+        </header>
+
+        <div id="Sign-out_button">
+
+            <button onclick="signOut()"> Sign Out</button>
+
+        </div>
+        <!--
+            Home Page Div 
+        -->
+
+        <div id="HomePage">
+
+            <!--
+                <img src="Home.jpeg" alt="A picture of Burlington" id="pic">
+            -->
+
+            <br>
+
+            I would like to welcome you to my humble website. My name is David Martin and I am a Computer Science Student at Brock University. 
+            I started my coding journey at the age of 18 during my final senior year of high school.
+            I want to contiue to learn about the realm of Computer Science all while developing my practical coding skills. 
+            That being said, this website contains six differnet pages. Above, you can find six hyperlinks. 
+            To find out more about me, click the "About Me" hyper link above. Additoinally, I have left a hyper link for my courses for the 2022 fall semester. 
+            Feel free to check out my CV page. Lasty, make an account to view my Past Projects !
+
+        </div>
+
+        <!--
+            Courses Page
+        -->
+
+        <div id="courses">
+            <h2>
+                My Fall 2022 Courses (Click to learn more !):
+            </h2>
+
+            Not a User
+
+            <ul style=" list-style: none; font-size: 40p;">
+                <li>  <a href="https://www.cosc.brocku.ca/~houghten/cosc2p03/">COSC 2P03  - Advanced Data Structres</a> </li>
+                <li>  <a href="https://www.cosc.brocku.ca/~bockusd/2p12/2p12.html">COSC 2P12  - Introduction to Computer Archeture</a> </li>
+                <li>  <a href="https://www.cosc.brocku.ca/archive/offerings/apco2p89"> COSC 2P89 - Internet Technologies</a></li>
+                <li>  <a href="https://brocku.ca/webcal/2020/undergrad/phil.html#sec2">PHIL 1F95    - The Meaning  of Life</a></li>
+
+            </ul>
+        </div>
+
+        <!--
+            About Me Page
+        -->
+        <div id="aboutMe" style="background-color:rgba(116, 240, 116, 0.6);">
+
+            <h2>About Me</h2>
+
+            <img src="TORM2546.JPG" alt="A Picture of Me" id="Me">
+
+            <div id="content">
+
+                Hello there, the picture to the left is yours truly. Evidently, I would say that I have a passion for music.
+                Since as long as I can remeber music has always been a huge part of my life. I plan to keep this aspect of my 
+                life for as long as I can. While I have been playing in a band for about two years, I enjoy all kinds of music 
+                including Electronic, Classic Rock, Classical and even classic hip hop.While I'd say that music is my main hobby, I'd like to share a little more about myself.
+                Such as:
+                <br>
+                <br>
+                As im sure most of us do, I really enjoy video games. 
+                Since as long as I can remeber video games were a huge part of my life. Still to this day, I make sure to set time aside just to experience what developers have worked so hard to create. 
+                Some of my favourite genres include:
+
+                <br>
+
+                <ul>
+
+                    <li> RPG's(Skyrim, Dark Souls, The Witcher 3, Fallout)</li>
+                    <li>Horror Games ( Dead Space, Resident Evil, Outlast)</li>
+                    <li>FPS (Battlefield, CSGO, Bioshock)</li>
+
+                </ul>
+
+                <img src="DarkSouls.jpg" alt="A picture of a Dark Souls Game" id="pic">
+
+            </div>
+        </div>
+
+        <!--
+            Resume Page
+        -->
+        <div id="CvPage">
+
+            <h1>CV Page</h1>
+            <br>
+            <embed src="Resume.pdf.pdf" type="" id="Resume">
+        </div>
+
+        <!--
+            Sign in form
+        -->
+        <div id="Sign-up">
+
+            <h2> Please Login</h2>
+            
+            UserName:
+            <br>
+
+            <input type="text" id="Uname"> 
+            <br>
+            Password:
+            <br>
+
+            <input type="password" id="Pword">
+            <br>
+           
+            <br>
+            <button style=" background-color:rgba(116, 240, 116, 0); border: none; cursor: pointer; font-size: 20px; color: blue; " id="loginButton" onclick="login()">Login</button>
+            <br>
+            <br>
+            
+            <div style="font-size: 20px;">
+
+                Not a User ?: <button style="background-color: rgba(116,240,116,0); border: none; font-size:20px ; color: blue; cursor: pointer;" onclick="showLogin()">Sign-up</button>
+            </div>
+           
+        </div>
+        <!--
+            Create Account Page
+        -->
+        <div id="Create">
+
+            <h2> Create Your Account</h2>
+            
+            Create username:
+
+            <br>
+           
+            <input type="text" id="CreateUsername"> 
+            <br>
+            Create password:
+            <br>
+
+            <input type="password" id="CreatePassword">
+            <br>
+           
+            <br>
+            <button style=" background-color:rgba(116, 240, 116, 0); border: none; cursor: pointer; font-size: 20px;  color: blue;" id="loginButton" onclick="createUser()">Create</button>
+            <br>
+            <br>
+
+            <div style="font-size: 20px;">
+                Have an Account ?: <button style="background-color: rgba(116,240,116,0);font-size: 20px;border: none; color: blue; cursor: pointer;" onclick="showSignUp()">Login </button>
+            </div>
+
+        </div>
+
+        <!--
+            Past projects display. Hidden until user status is logged in
+        -->
+        <div id="projects">
+            <h1> Past Projects</h1>
+
+            <ul style=" list-style: none; font-size: 40p;">
+                <li>  <a href="https://www.cosc.brocku.ca/~dm20zo/A1/index.html">Assignment 1 </a> </li>
+                <li>  <a href="https://www.cosc.brocku.ca/~dm20zo/A2/index.html">Assignment 2</a> </li>
+                <li>  <a href="http://cosc.brocku.ca/~dm20zo/A3/vgyln/form.html"> Assignment 3 </a></li>
+                <li>  <a href="https://www.cosc.brocku.ca/~dm20zo/A4/znqog/loginAsyncPartB.html">Assignment 4 </a></li>
+            </ul>
+            
+        
+        </div>
+
+        <!--
+            Div to display logged in status
+        -->
+        <div id="LoggedIn">
+            You are not logged in
+        </div>
+        <!--
+            Form to delete a record within the sQL database
+        -->
+        <div id="delete">
+
+            <h4>Enter Credentials to Delete Acocunt</h4>
+            UserName:
+            <br>
+
+            <input type="text" id="DeleteUsername"> 
+            <br>
+            Password:
+            <br>
+
+            <input type="password" id="DeletePassword">
+            <br>
+           
+            <br>
+            <button style=" background-color:rgba(116, 240, 116, 0); border: none; cursor: pointer; font-size: 20px; color: blue; " id="loginButton" onclick="deleteUser()">Delete Account</button>
+            <br>
+            <br>
+            
+        </div>
+        
+        <!--
+            Button within the footer to show the Delete form when clicked
+        -->
+        <footer>
+            <button onclick="showDelete()">Delete Account</button>
+        </footer>
+        
+    </body>
+
+    <script>
+
+        // Functions to make the wepage on a single html document. Each function correspondes to Hidding and showing a div based on which button was pressed by the user
+            
+        let counter=0;
+
+        let loggedin=false; // Logged in status
+
+        let LoginCheck;
+
+        let PasswordCheck;
+
+        function check(){ // function to check if the user is logged in or not to view the past projects. Function is called in past projects
+
+            if (!loggedin){ //status==false, direct user to the sign in form
+                
+                showSignUp()
+
+            }else{ // status ==true, direct user to the past projects page
+
+                ShowProjects()
+                
+            }
+        }
+
+        // Show the Home Page
+        function showHome(){
+
+            document.getElementById("HomePage").style.visibility="visible";
+            document.getElementById("aboutMe").style.visibility="hidden";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden"
+        }
+
+        // Show the Course page
+        function showCourses(){
+            
+            document.getElementById("courses").style.visibility="visible";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden";
+        }
+        //Show the about me page
+        function showAboutMe(){
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="visible";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden"
+        }
+
+        // Show the CV Page
+        function showCvpage(){
+
+            document.getElementById("CvPage").style.visibility="visible";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden ";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden"
+
+        }
+        //Show Sign up function
+        function showSignUp(){
+
+            document.getElementById("Sign-up").style.visibility="visible";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden ";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden"
+
+
+        }
+
+        //Show login page
+        function showLogin(){
+
+            document.getElementById("Create").style.visibility="visible";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden ";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden";
+
+        }
+        // show previous projects
+        function ShowProjects(){
+
+            document.getElementById("projects").style.visibility="visible"
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden ";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("delete").style.visibility="hidden";
+
+        }
+
+        //Show the delete form
+
+        function showDelete(){
+
+            document.getElementById("delete").style.visibility="visible";
+            document.getElementById("Create").style.visibility="hidden";
+            document.getElementById("Sign-up").style.visibility="hidden";
+            document.getElementById("CvPage").style.visibility="hidden";
+            document.getElementById("HomePage").style.visibility="hidden";
+            document.getElementById("aboutMe").style.visibility="hidden ";
+            document.getElementById("courses").style.visibility="hidden";
+            document.getElementById("projects").style.visibility="hidden";
+
+        }
+        
+        // Function to take in inputs from the user and store credentials into the data base
+        function createUser(){
+
+            var username = document.querySelector("#CreateUsername").value; // Grab input field from the user 
+            var password = document.querySelector("#CreatePassword").value; // Grab input filed from the user
+
+            var req = new XMLHttpRequest(); // Creates Packet/Request
+
+            req.addEventListener("readystatechange", eve => { 
+            if (req.readyState == 4) { //Recieving the packet
+
+                alert(req.responseText.trim())
+
+            }
+            });
+
+            req.open("POST", "./check.cgi");
+
+            // need to specify the post format when doing ajax
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // Sends the user and pass value to the backend
+            req.send("user=" + username + "&" + "pass=" + password);
+            
+		}
+
+            // Function for the user to login 
+        function login(){
+
+            var username= document.querySelector("#Uname").value;
+            var password = document.querySelector("#Pword").value;
+
+            var req = new XMLHttpRequest(); // Creates Packet/Request
+
+            req.addEventListener("readystatechange", eve => { 
+
+            if (req.readyState == 4) { //Recieving the packet
+
+
+                if(req.responseText.trim()=="You are Logged in"){ //Logged in condition.
+
+                    alert("You are Logged in");
+
+                    loggedin=true //set login status to true
+
+                    document.getElementById("LoggedIn").style.color="Green"; //Show logged in status
+
+                    document.getElementById("LoggedIn").innerHTML="You Are Logged in"; // Change the contents within the div
+
+                    document.getElementById("login_button").style.visibility="hidden"; // Hide the login button as the user is already logged in
+
+                    ShowProjects(); // direct user to the projects page
+
+                    sessionStorage.setItem("username",username); // set the session storage for username
+
+                    sessionStorage.setItem("Password", password); // set the sessionn storage for the password
+
+                    sessionStorage.setItem("loggedIn" ,loggedin);  
+
+                    LoginCheck= sessionStorage.getItem("username");
+
+                    PasswordCheck= sessionStorage.getItem("Password");
+
+                    document.getElementById("Sign-out_button").style.visibility="visible"; // Set the sign out button to visible
+                    
+                } else{
+
+                    alert(req.responseText.trim()) // alert if the user did not enter correct credentials 
+                }
+
+                
+            }
+            });
+
+            req.open("POST", "./login.cgi");
+
+            // need to specify the post format when doing ajax
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // encodeURIComponent will perform percent encoding on the parameter
+            req.send("user=" + username + "&" + "pass=" + password);
+
+        }
+        function deleteUser(){
+
+            var username = document.querySelector("#DeleteUsername").value; // Grab input field from the user 
+            var password = document.querySelector("#DeletePassword").value; // Grab input filed from the user
+
+
+            var req = new XMLHttpRequest(); // Creates Packet/Request
+
+            req.addEventListener("readystatechange", eve => { 
+            if (req.readyState == 4) { //Recieving the packet
+
+                if( req.responseText.trim()=="User is deleted"){ // If the user is deleted/ signed out set the user to not logged in status
+
+                    alert(req.responseText.trim())
+
+                    loggedin= false; // set logged in status to false
+
+                    document.getElementById("LoggedIn").style.color="Red";
+
+                    document.getElementById("login_button").style.visibility="visible";
+
+                    document.getElementById("LoggedIn").innerHTML=" You are not logged in";
+                }else{
+
+                    alert(req.responseText.trim());
+
+                }
+
+            }
+            });
+
+            req.open("POST", "./delete.cgi");
+            
+
+            // need to specify the post format when doing ajax
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // encodeURIComponent will perform percent encoding on the parameter
+            req.send("user=" + username + "&" + "pass=" + password);
+            
+
+        }
+
+        /**
+         * Function to attempt session storage logic
+         **/
+        function KeepData(){
+            
+            console.log("Still need to implement this function ! ")
+
+            if( sessionStorage.getItem("loggedIn"==true)){
+
+                if(sessionStorage.getItem("username")==sessionStorage.getItem("username") && sessionStorage.getItem("Password")==sessionStorage.getItem("Password")){
+
+                    document.getElementById("LoggedIn").style.color="Green";
+
+                    document.getElementById("LoggedIn").innerHTML="You Are Logged in";
+
+                    document.getElementById("login_button").style.visibility="hidden";
+
+                }
+
+            } 
+
+        }
+
+        function signOut(){ // Function for the user to set login status to logged out
+
+            loggedin= false;
+        
+            document.getElementById("LoggedIn").style.color="Red";
+
+            document.getElementById("login_button").style.visibility="visible";
+
+            document.getElementById("LoggedIn").innerHTML=" You are not logged in";
+
+            document.getElementById("Sign-out_button").style.visibility="hidden";
+
+            sessionStorage.clear() //Clear the session storage
+
+            showHome()
+            
+        }
+        // bruhhh moment 
+    </script>
+</html>
